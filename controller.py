@@ -36,7 +36,6 @@ os.environ["CUDA_VISIBLE_DEVICES"] = ""
 class_names = json.load(open('./modele/class_names', 'r'))
 model = load_model('./modele/my_xcept_model_all_tune.h5', custom_objects={"f1_m": f1_m})
 
-
 # API available in http://ismail2233.pythonanywhere.com/
 
 @app.route('/')
@@ -63,7 +62,6 @@ def tagGenerators():
     sorting = (-prediction).argsort()
     # getting the top 3 predictions
     sorted_ = sorting[0][:3]
-
     for value in sorted_:
         predicted_label = class_names[value]
         prob = (prediction[0][value]) * 100
@@ -71,8 +69,6 @@ def tagGenerators():
         result[predicted_label] = prob
 
     return result
-    # data = {'name': 'nabin khadka'}
-    # return jsonify(data)
 
 
 if __name__ == "__main__":

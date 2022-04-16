@@ -16,31 +16,25 @@
         <div class="col-lg-12 col-sm-12 col-11 main-section">
             <h1 class="text-center text-primary"> race predictions </h1>
 
-
-
-
-            <form id="formdog" action="/tagGenerators" enctype="multipart/form-data" method="POST">
-
-                <input type='file' id="file" name="file" />
-                <div id='img_contain'>
-                    <img id="image-preview" align='middle'src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title=''/>
+            <form id="data" method="post" enctype="multipart/form-data">
+                <input type='file' id="file" name="file"/>
+                <div id='img_contain' style="text-align: center;">
+                    <img id="image-preview" align='middle'
+                         src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image"
+                         title=''/>
                 </div>
-
-                <button id="predict" class="btn btn-primary">Predict tags</button>
-
+                <button class="btn btn-primary">Submit</button>
             </form>
+
 
             <div id="wait" style="display: none;">
                 <img src="{{ url_for('static',filename='img/loading.gif') }}">
             </div>
-            <div >
+            <div>
                 <div id="resultdiv"></div>
                 <div class="container" style="margin-top: 2%; height: 300px;">
                     <div class="row">
-                        <div id="results" class="col-lg-5 rescontain">
-
-                        </div>
-
+                        <div id="results" class="col-md-2 col-md-offset-5"></div>
                     </div>
                 </div>
             </div>
@@ -55,33 +49,36 @@
 <script src="{{ url_for('static',filename='javascript/bootstrap.min.js') }}" type="text/javascript"></script>
 <script src="{{ url_for('static',filename='javascript/fileinput.js') }}" type="text/javascript"></script>
 <script>
-
-
-    $("form[name='formdog']").on("submit", function(ev) {
-        alert(1);
-        ev.preventDefault(); // Prevent browser default submit.
-
+    $("form#data").submit(function (e) {
+        e.preventDefault();
+        $('#results').empty();
         var formData = new FormData(this);
-
+        $('#wait').show();
         $.ajax({
             url: "/tagGenerators",
-            type: "POST",
+            type: 'POST',
             data: formData,
-            success: function (result) {
-                console.log('saved')
+            success: function (data) {
+                $('#wait').hide();
+                console.log(data);
+                for (const [key, value] of Object.entries(data)) {
+                    console.log(`${key}: ${value}`);
+                    $('#results').append("<div style='margin-top: 2%'><button type='button' class='btn btn-warning'><label>" + key + " </label></button>  confidence : " + Math.round(value) + "% <progress max='100' value='" + value + "'> </progress></div> ");
+                }
             },
-           // cache: false,
-           // contentType: false,
-           // processData: false
+            cache: false,
+            contentType: false,
+            processData: false
         });
-
     });
+
 
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#image-preview').attr('src', e.target.result);
+                $('#image-preview').attr('align', 'middle');
                 $('#image-preview').hide();
                 $('#image-preview').fadeIn(650);
             }
@@ -89,7 +86,7 @@
         }
     }
 
-    $("#file").change(function() {
+    $("#file").change(function () {
         readURL(this);
     });
 
