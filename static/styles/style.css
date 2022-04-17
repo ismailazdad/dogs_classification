@@ -16,13 +16,13 @@ header {
     background-color: #fff;
 }
 footer {
-    background-color: #fff;
+    background-color: #E9E9E9;
     min-height: 40px;
     width: 100%;
     bottom: 0;
     position: fixed;
     background-position-y: 400px;
-    background-image: url(/static/img/logo/foot.jpg);
+    background-image: url(/static/img/logo/foot2.jpg);
 }
 .footercontainer{
     bottom: 0px;
@@ -30,8 +30,8 @@ footer {
     margin: 20px -10% 0px 10%;
 }
 body{
-    background-image: url("/static/img/background.png");
-    background-repeat: no-repeat;
+    background-image: url("/static/img/background2.jpg");
+    background-repeat: round;
 }
 
 #question{
