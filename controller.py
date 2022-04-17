@@ -1,6 +1,8 @@
+import base64
 import json
 import os
 import sys
+
 
 from flask import Flask, request, render_template
 from keras import backend as K
@@ -50,6 +52,12 @@ def tagGenerators():
     imagePath = './static/img/test.jpg'
     if uploaded_file.filename != '':
         uploaded_file.save(imagePath)
+    else:
+        b64_string = request.form['example']
+        imgdata = base64.b64decode(b64_string)
+        filename = './static/img/test.jpg'  # I assume you have a way of picking unique filenames
+        with open(filename, 'wb') as f:
+            f.write(imgdata)
 
     print('passage controller')
     my_image = load_img(imagePath, target_size=(299, 299))
