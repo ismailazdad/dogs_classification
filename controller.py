@@ -21,8 +21,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/tagGenerators', methods=['POST'])
-def tagGenerators():
+@app.route('/detect_image', methods=['POST'])
+def detect_image():
     result = {}
     imagePath = './static/img/test.jpg'
     image_service = save_and_process()
