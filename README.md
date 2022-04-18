@@ -2,7 +2,7 @@
 
 # Dog breed detection from images with convolutional neural networks and transfert learning
 
-little project with flask , using keras and exception to predict dog breeds
+Project with flask , using keras and exception to predict dog breeds
 
 - Pre-process the images with specific techniques (e.g. Whitening, equalization, possibly modification of the size of the images).
 - Perform data augmentation (mirroring, cropping ...).
@@ -19,3 +19,6 @@ Annotations: Class labels, Bounding boxes
 Aditya Khosla, Nityananda Jayadevaprakash, Bangpeng Yao and Li Fei-Fei. Novel dataset for Fine-Grained Image Categorization. First Workshop on Fine-Grained Visual Categorization (FGVC), IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2011. [pdf] [poster] [BibTex]
 
 Secondary: J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li and L. Fei-Fei, ImageNet: A Large-Scale Hierarchical Image Database. IEEE Computer Vision and Pattern Recognition (CVPR), 2009. [pdf] [BibTex]
+
+
+![image](https://user-images.githubusercontent.com/74118071/163820751-23155bb8-6b28-4204-ad26-27eef4895f8d.png)
