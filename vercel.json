@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "./controller.py",
-      "use": "@ismailazdad/dogs-classification"
+      "use": "vercel.com/ismailazdad/dogs-classification"
     }
   ],
   "routes": [
