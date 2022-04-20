@@ -2,6 +2,8 @@
 
 # Dog breed detection from images with convolutional neural networks and transfert learning
 
+This is a simple flask/html website who take a picture from dogs and predict the breeds
+
 Project with flask , using keras and Xception to predict dog breeds
 
 - Pre-process the images with specific techniques (e.g. Whitening, equalization, possibly modification of the size of the images).
