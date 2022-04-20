@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "./controller.py",
-      "use": "@ismailazdad/dogs_classification"
+      "use": "@ismailazdad/dogs-classification"
     }
   ],
   "routes": [
