@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.py",
+      "src": "./*.py",
       "use": "@ismailazdad/dogs-classification"
     }
   ],
   "routes": [
     {
       "src": "(.*)",
-      "dest": "controller.py"
+      "dest": "./controller.py"
     }
   ]
 }
