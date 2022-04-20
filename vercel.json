@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "*.py",
-      "use": "@ismailazdad/now-flask"
+      "use": "@ismailazdad/dogs-classification"
     }
   ],
   "routes": [
