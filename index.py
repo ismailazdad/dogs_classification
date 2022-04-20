@@ -18,8 +18,7 @@ model = load_model('./modele/my_xcept_model_all_tune.h5', custom_objects={"f1_m"
 
 @app.route('/')
 def home():
-    # return render_template('index.html')
-    return '<h1>test</h1>'
+    return render_template('index.html')
 
 
 @app.route('/detect_image', methods=['POST'])
@@ -44,10 +43,10 @@ def detect_image():
     return result
 
 
-if __name__ == "__main__":
-    app.config['env'] = sys.argv[1]
+# if __name__ == "__main__":
+    # app.config['env'] = sys.argv[1]
 #     if app.config.get('env') == 'prod':
-    app.run()
+#     app.run()
 #     else:
 #         app.run(debug=True)
     # app.run(host='178.170.47.69', port=5000)
