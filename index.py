@@ -18,7 +18,8 @@ model = load_model('./modele/my_xcept_model_all_tune.h5', custom_objects={"f1_m"
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # return render_template('index.html')
+    return '<h1>test</h1>'
 
 
 @app.route('/detect_image', methods=['POST'])
