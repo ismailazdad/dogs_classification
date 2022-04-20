@@ -17,7 +17,7 @@ model = load_model('./modele/my_xcept_model_all_tune.h5', custom_objects={"f1_m"
 # API available in http://ismail2233.pythonanywhere.com/
 
 @app.route('/')
-def index():
+def home():
     # return render_template('index.html')
     return '<h1>test</h1>'
 
