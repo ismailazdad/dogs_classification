@@ -43,10 +43,10 @@ def detect_image():
     return result
 
 
-# if __name__ == "__main__":
-    # app.config['env'] = sys.argv[1]
-#     if app.config.get('env') == 'prod':
-#     app.run()
-#     else:
-#         app.run(debug=True)
-    # app.run(host='178.170.47.69', port=5000)
+if __name__ == "__main__":
+    app.config['env'] = sys.argv[1]
+    if app.config.get('env') == 'prod':
+        app.run()
+    else:
+        app.run(debug=True)
+    app.run(host='178.170.47.69', port=5000)
